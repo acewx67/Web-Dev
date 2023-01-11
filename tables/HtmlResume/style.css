@@ -1,0 +1,96 @@
+
+/* .srow{
+    border:1px solid black;
+} */
+
+html,body{
+    font-family: Poppins,Tahoma,Helvetica;
+    background-color: azure;
+}
+h2{
+    display: block;
+    margin : 10px;
+
+}
+#rounded{
+    margin-left: 5%;
+    display: inline;
+    width: 100px;
+    height: 100px;
+    border-radius: 75px;
+    border:3px solid black;
+    outline:4px solid #04AA6D;
+}
+
+#navbar li{
+    display: inline;
+}
+#navbar a{
+    text-decoration: none;
+    padding-right: 15px;
+}
+
+#github:visited{
+    text-decoration: none;
+}
+#github{
+    color:black;
+}
+#twitter:visited{
+    text-decoration: none;
+}
+#twitter{
+    color: rgb(29, 161, 242);
+}
+#linkedin:visited{
+    text-decoration: none;
+}
+#linkedin{
+    color : rgb(10, 102, 194);
+}
+#leetcode:visited{
+    text-decoration: none;
+}
+#leetcode{
+    color:rgb(0,120,215);
+}
+abbr{
+    text-decoration: none;
+}
+#contact{
+    font-family: 'Times New Roman', Times, serif,sans-serif;
+    font-size: 10px;
+}
+#phone{
+    text-decoration: none;
+    color:blue;
+    padding-left: 10px;
+}
+#email{
+    text-decoration: none;
+    color: blue;
+    padding-left: 10px;
+}
+
+
+
+.srow{
+    width:100%;
+}
+.scol{
+    width:50%;
+    border: 1px transparent;
+}
+
+.skills
+{
+    width: 100%;
+    text-align: center;
+    border: 1px transparent;
+    border-collapse:collapse;
+    box-sizing: border-box;
+}
+.edu{
+    width: 100%;
+}
+

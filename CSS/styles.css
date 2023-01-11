@@ -1,0 +1,20 @@
+.box{
+    padding: 5% solid black;
+    margin: 5%;
+    color: pink;
+    text-decoration: underline;
+
+}
+.box a:hover{
+    color: aqua;
+}
+.box a:visited{
+    color: palevioletred;
+}
+.box li{
+    list-style-image: url("checkMark.png");
+}
+.forms input{
+    padding: 10px;
+    padding-bottom: 20px;
+}

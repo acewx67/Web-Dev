@@ -1,36 +1,234 @@
 <!DOCTYPE html>
-<html>
-<style>
-table, th {
-  border:1px solid black;
-  text-align: left;
-  border-collapse: collapse;
-}
-td{
-    text-align: center;
-}
-</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/53caaa84f9.js" crossorigin="anonymous"></script>
+    <title>Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+</head>
 <body>
+    <img id="rounded" src="tony.jpg" alt=""/>
+    <br>
+    <h2>Mohammed Ashfaq</h2>
 
-<h2>TR elements define table rows</h2>
 
-<table style="width: 100%;">
-    <tr>
-        <th rowspan="4" style="text-align: center;">Skills</th>
-        <td>Java</td>
-    </tr>
-    <tr>
-        <td>Data Structures and Algorithms</td>
-    </tr>
-    <tr>
-        <td>HTML</td>
-    </tr>
-    <tr>
-        <td>Git,Github</td>
-    </tr>
-</table>
 
-<p>To understand the example better, we have added borders to the table.</p>
+
+
+    <nav id="navbar">
+        <ul>
+            <li>
+                <abbr title="Github profile">
+                    <a id="github" href="https://github.com/acewx67" target="_blank"><i class="fa-brands fa-github"></i></a>
+
+                </abbr>
+            </li>
+            <li>
+                <abbr title="Linkedin profile">
+                    <a id="linkedin" href="https://www.linkedin.com/in/mohammed-ashfaq77/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </abbr>
+                
+            </li>
+            <li>
+                <abbr title="Twitter profile">
+                    <a id="twitter" href="https://twitter.com/ash4space" target="_blank"> <i class="fa-brands fa-twitter"></i> </a>
+                </abbr>
+                
+            </li>
+            <li>
+                <abbr title="Leetcode profile">
+                    <a id="leetcode" href="https://leetcode.com/Ace_kun76/" target="_blank"><i class="fa-solid fa-code"></i></a>
+                </abbr>
+                
+            </li>
+        </ul>
+    </nav>
+
+    <p id="contact">
+        <abbr title="Email">
+            <a id="email" href="mailto:mohammed.ashfaq1127@gmail.com"><i class="fa-solid fa-envelope"></i> mohammed.ashfaq1127@gmail.com</a>
+        </abbr>
+        </br> 
+        <abbr title="Contact no.">
+            <a id="phone" href="tel:+91 9820098200"><i class="fa-solid fa-phone"></i>  +91 9820098200</a>
+        </abbr>
+    </p>
+    
+    <div>
+        <table class="skills">
+            <tr class="srow">
+                <th class="scol" rowspan="5">Skills</th>
+            </tr>
+            <tr class="srow">
+                <td class="scol">Java</td>
+            </tr>
+            <tr class="srow">
+                <td class="scol">Data Structures and Algorithms</td>
+            </tr>
+            <tr class="srow">
+                <td class="scol">HTML</td>
+            </tr>
+            <tr class="srow">
+                <td class="scol">Git,Github</td>
+            </tr>
+            
+        </table>
+        
+    </div>
+   
+    <br>
+
+    <div class="edu">
+    <table>
+        <!-- <tr>
+            <th>Links:</th>
+            <th>Career Objective</th>
+        </tr> -->
+        <!-- <tr>
+            <td>
+                <ul>
+                    <li>
+                        <a href="https://github.com/acewx67" target="_blank">Github</a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/mohammed-ashfaq77/" target="_blank">Linkedin</a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/ash4space" target="_blank">Twitter</a>
+                    </li>
+                    <li>
+                        <a href="https://leetcode.com/Ace_kun76/" target="_blank">Leetcode</a>
+                    </li>
+                </ul>
+            </td>
+            <td id="border">
+                Seeking a position in a company where I can launch my career and build a valuable skillset.
+            </td>
+        </tr> -->
+        <tr>
+            <th>Education</th>
+            <th>Projects</th>
+        </tr>
+        <tr>
+            <td>Deccan College of Engineering and Technology</td>
+            <td id="border">
+                Bird Species Identification Project
+            </td>
+        </tr>
+        <tr>
+            <td>
+                B.E in Electronics and Communications Engineering
+                CGPA: 7.12
+                June 2022 | Telangana, India
+
+                COURSEWORK :
+        <ul>
+            <li>Programming for problem-solving</li>
+            <li>Very Large Scale Integration Design(VLSI)</li>
+            <li>Verilog Hardware Description Language</li>
+            <li>Digital Electronics</li>
+            <li>Electronic Devices</li>
+            <li>Automatic Control Systems</li>
+        </ul>
+
+
+
+
+
+
+        </td>
+        <td id="border">
+            Created a Transfer Learning model , using which we can identify
+            around 400 species of birds through a bird’s image.
+            It has an accuracy of about 75 percent.
+            <br>
+            <a href="https://github.com/acewx67/BirdSpeciesIdentification" target="_blank">Github Repository</a>
+        
+        </td>
+        </tr>
+        <tr>
+            <td>Shivam Junior College</td>
+            <td id="border">
+                Home Automation Using NodeMCU
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+            Intermediate Education
+            Percentage: 79%
+            April 2018| Telangana, India
+
+
+            </td>
+            <td id="border">
+                
+                Created a home automation system, using which we can control
+                the electric appliances of a house through an 
+                app/Google voice assistance.
+                <br>
+                Video <a href="https://youtu.be/rMrsTK6gKgE" target="_blank">link</a> of working project.
+                
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>Delhi Public School</td>
+            <td id="border">Personal Website</td>
+
+        </tr>
+        <tr>
+            <td>
+                CGPA: 9.4
+                April 2016| Telangana, India
+            </td>
+            <td id="border">
+                
+                Currently learning the tech stack required to build
+                and deploy my responsive personal website which will
+                display all of my current and future projects.
+
+            </td>
+        </tr>
+
+    </table>
+    </div>
+    <div class="other1">
+      
+        <table>
+            <tr>
+                <th>Achievements</th>
+                <th>Strengths</th>
+            </tr>
+            
+
+            <tr>
+                <td>
+                    <ul>
+                        <li>I have assisted a lot of friends in their studies</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Quick learner</li>
+                        <li>Good Communication Skills</li>
+                        <li>Time Management and result oriented</li>
+                        <li>Ability to work in teams as well as an individual</li>
+                        <li>Self - driven and self motivated</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    
+    </div>
+
+    
 
 </body>
 </html>
