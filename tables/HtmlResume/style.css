@@ -11,7 +11,22 @@ h2{
     display: block;
     margin : 10px;
 
+
 }
+#allcontact p{
+    margin:0;
+}
+#allcontact{
+    max-height: 200px;
+    max-width: 180px;
+    border:1px solid;
+    overflow: auto;
+    margin:0;
+    position:
+}
+
+
+
 #rounded{
     margin-left: 5%;
     display: inline;
@@ -27,7 +42,7 @@ h2{
 }
 #navbar a{
     text-decoration: none;
-    padding-right: 15px;
+    padding-right: 10px;
 }
 
 #github:visited{
