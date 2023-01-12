@@ -1,0 +1,22 @@
+.container{
+    display:flex;
+    height:25vh;
+    width:25vw;
+    background-color: aqua;
+    align-items: center;
+
+}
+.a1{
+    height:5vh;
+    width: 5vw;
+    background-color: bisque;
+
+    
+}
+.a2{
+    height:5vh;
+    width: 5vw;
+    background-color: tomato;
+    
+}
+

@@ -14,10 +14,6 @@
     margin-left: 5px;
     margin-right: 5%;
 } */
-html{
-    box-sizing:border-box;
-    overflow: auto;
-}
 h1{
     margin:6px 6px 0 0;
 }
