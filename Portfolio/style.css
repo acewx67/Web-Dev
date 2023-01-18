@@ -20,7 +20,6 @@
     /* padding: 0 10px; */
 }
 .header{
-    position: sticky;
     background: rgb(118,111,255);
     background: linear-gradient(90deg, rgba(118,111,255,1) 10%, rgba(136,242,255,1) 90%);
     grid-row-start: 1;
@@ -130,6 +129,77 @@
     flex-wrap: wrap;
     flex-shrink: 4;
 }
+#wrapper2{
+    height: 40vh;
+    width: 100vw;
+    margin-top: 3vh;
+    display: flex;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid black;
+}
+#about{
+    width: 80vw;
+    height: 56vh;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* One col for about section and other for skills figures */
+}
+#skillsection h3,#skillsection p{
+    margin-bottom: 2%;
+}
+/* Container for skill bars */
+.container{
+    height: 5%;
+    width: 100%; /* Full width */
+    background-color: #ddd; /* Grey background */
+    overflow: hidden;
+    border-radius: 30px;
+    margin-bottom: 3%;
+}
+#aboutContent{
+    padding-right: 5%;
+}
+#aboutContent p{
+    padding-top: 5%;
+}
+
+#skillsset{
+    padding-left: 5%;
+}
+#skillsset h3{
+    padding-bottom: 5%;
+}
+  
+.skills{
+    text-align: right; /* Right-align text */
+    padding-top: 10px; /* Add top padding */
+    padding-bottom: 10px; /* Add bottom padding */
+    color: white; /* White text color */
+}
+  
+.html{
+    width: 90%; background: rgb(118,111,255);
+    background: linear-gradient(90deg, rgba(118,111,255,1) 10%, rgba(136,242,255,1) 90%);
+    margin-bottom:5%;
+} 
+.css {
+    width: 80%; background: rgb(118,111,255);
+    background: linear-gradient(90deg, rgba(118,111,255,1) 10%, rgba(136,242,255,1) 90%);
+    margin-bottom:5%;
+} 
+.js {
+    width: 65%; background: rgb(118,111,255);
+    background: linear-gradient(90deg, rgba(118,111,255,1) 10%, rgba(136,242,255,1) 90%);
+    margin-bottom:5%;
+} 
+.php {
+    width: 60%; background: rgb(118,111,255);
+    background: linear-gradient(90deg, rgba(118,111,255,1) 10%, rgba(136,242,255,1) 90%);
+} 
+
+
 
 
 
