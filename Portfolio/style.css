@@ -220,6 +220,7 @@
     /* flex-wrap: wrap; */
     font-family: 'Poppins', sans-serif;
     border: 1px solid black;
+    padding-bottom: 3%;
 }
 #eduexp{
     width: 80vw;
@@ -236,10 +237,43 @@
     padding-left: 7%;
 }
 
+.para1,.para2,.socials{
+    width:10%;
+    text-align: center;
+}
+
+
+a{
+    color: white;
+}
+#fb:hover{
+    color : #3b5998;
+}
+#twitter:hover{
+    color:#00acee;
+}
+#linkedin:hover{
+    color:#0A66C2;
+}
+#footer{
+    font-family: Poppins,sans-serif;
+    font-weight: 200;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+
 
 
 
 @media screen and (max-width:400px){
+    html{
+        font-size:14px;
+    }
     #content{
         flex-direction: column;
         justify-content: flex-start;
@@ -265,6 +299,14 @@
     #wrapper{
         height: fit-content;
     }
+    #footer{
+        flex-direction: column;
+        align-items: center;
+    }
+    .para1,.para2,.socials{
+        width:fit-content;
+    }
+    
 }
 
 

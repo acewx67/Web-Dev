@@ -1,0 +1,110 @@
+/* table{
+    width:50%;
+    float:left;
+    margin:0;
+}
+#left table{
+    width:30%;
+    border-top:1px solid black;
+    border-right: 1px solid black;
+    margin-right:5px;
+}
+#right table{
+    width:55%;
+    margin-left: 5px;
+    margin-right: 5%;
+} */
+h1{
+    margin:6px 6px 0 0;
+}
+h6{
+    margin-top: 0px;
+}
+.head{
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    display:flex;
+}
+.s_head{
+    font-size: 12px;
+}
+th.head,td.head{
+    font-size: 15px;
+}
+.text{
+    font-family: Poppins;
+    font-weight: 200;
+    font-size: 15px;
+}
+#left{
+    color:white;
+    float: left;
+    width:30%;
+}
+#left table{
+    background-color: #2F3C7E;
+}
+
+
+#right{
+    float: right;
+    width:70%;
+    background-color: #FBEAEB;
+}
+#right table{
+    padding-left:1em;
+    border-left: 1px solid black;
+}
+th{
+    font-family: Poppins;
+    text-align:left;
+}
+/* td{
+    font-family: DM Sans;
+} */
+#navbar li{
+    display: inline;
+    margin-right:30px;
+}
+abbr {
+    text-decoration: none;
+}
+
+#github,#twitter,#linkedin,#leetcode:visited{
+    text-decoration: none;
+}
+/* #github:visited{
+    text-decoration: none;
+} */
+#github{
+    color:black;
+}
+/* #twitter:visited{
+    text-decoration: none;
+} */
+#twitter{
+    color: rgb(29, 161, 242);
+}
+/* #linkedin:visited{
+    text-decoration: none;
+} */
+#linkedin{
+    color : rgb(10, 102, 194);
+}
+/* #leetcode:visited{
+    text-decoration: none;
+} */
+#leetcode{
+    color:rgb(0,120,215);
+}
+#phone{
+    text-decoration: none;
+    color:#FBEAEB;
+    /* padding-left: 10px; */
+}
+#email{
+    text-decoration: none;
+    color: #FBEAEB;
+    /* padding-left: 10px; */
+}
