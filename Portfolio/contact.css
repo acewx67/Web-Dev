@@ -3,14 +3,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: smooth;
-    overflow-x: hidden;
 }
-
-
-
 body{
     background: rgb(118,111,255);
     background: linear-gradient(90deg, rgba(118,111,255,1) 10%, rgba(136,242,255,1) 90%);
-    
+}
+#contact{
+    font-family: Poppins,sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 30%;
+    border-radius: 15px;
 }
