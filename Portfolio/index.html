@@ -14,21 +14,29 @@
             <div class="name">
                 <!-- <img src="Chris_Pratt.webp" alt="image_place"> -->
                 <!-- <img src="logo3.jpg" alt="logo"> -->
-                <a href="index.html"><h3>Chris Pratt</h3></a>
+                <a href="index.html"><h3 class="main--name">Chris Pratt</h3></a>
             </div>
-            <div class="navbar">
-                <nav>
-                    <ul>
-                        <a href="index.html"><li>Home</li></a>
-                        <a href="#aboutContent"><li>About</li></a>
-                        <a href="#skillsset"><li>Skills</li></a>
-                        <a href="#education"><li>Education</li></a>
-                        <a href="#Experience"><li>Experience</li></a>
-                        <a href="exp.html" target="_blank"><li>Resume</li></a>
-                        <a href="contact.html" target="_blank"><li>Contact</li></a>  
-                    </ul>
-                </nav>
+            <div class="navHam">
+                <div class="navbar">
+                    <nav>
+                        <ul id="list">
+                            <li class="list-item"><a href="index.html">Home</a></li>
+                            <li class="list-item"><a href="#aboutContent">About</a></li>
+                            <li class="list-item"><a href="#skillsset">Skills</a></li>
+                            <li class="list-item"><a href="#education">Education</a></li>
+                            <li class="list-item"><a href="#Experience">Experience</a></li>
+                            <li class="list-item"><a href="exp.html" target="_blank">Resume</a></li>
+                            <li class="list-item"><a href="contact.html" target="_blank">Contact</a></li>  
+                        </ul>
+                        
+                    </nav>
+                </div>
+                <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+                <a href="javascript:void(0);" class="hamburger dropbtn" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
             </div>
+            
         </header>
 
         <div id="home-main">
@@ -48,6 +56,11 @@
                     <div class="para">
                         <p>My name is Chris, I'm a Software Engineer</p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, hic.</p>
+                        <ul>
+                            <li><a href="http://google.com" class="fb"><i class="fa-brands fa-facebook"></i></a></li>
+                            <li><a href="http://google.com" class="twitter"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href="http://google.com" class="linkedin"><i class="fa-brands fa-linkedin"></i></a></li>
+                        </ul>
                     </div>
                    
                 </div>
@@ -153,7 +166,12 @@
         
         
     </div>
-
+    <script>
+        function myFunction(){
+            document.getElementById('navbar').style.display='block';
+            
+        }
+    </script>
     
     
 </body>
