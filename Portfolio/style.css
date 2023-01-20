@@ -291,11 +291,15 @@ a{
         justify-content: flex-end;
         align-items: flex-start;
     }
-    .navbar a{
+    .navbar{
+        display: none;
+        /* border: 2px solid red; */
+    }
+    .navbar a {
         display: block;
         font-size: 12px;
-        display: none;
-        /* display: inline; */
+        /* display: none; */
+        /* display: block; */
     }
     .hamburger{
         display: block;
