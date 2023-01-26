@@ -24,27 +24,31 @@ document.addEventListener("DOMContentLoaded",function(){
     if(localStorage.getItem('taskList') !== null){
         //parse the taskList to array
         let arrayTask = JSON.parse(localStorage.getItem('taskList'));
-        uniqueId = arrayTask.length;
+        if(arrayTask.length > 0){
+            uniqueId = arrayTask[arrayTask.length-1].checkbox;
 
-        for(let i = 0; i < arrayTask.length; i++){
-            let tr = document.createElement('tr');
-            let td1 = document.createElement('td');
-            let td2 = document.createElement('td');
-            let td3 = document.createElement('td');
-    
-            //td3 is for checkbox
-    
-            td3.innerHTML += '<form><input type="checkbox"></form>';
-    
-            td1.innerHTML += arrayTask[i].taskName;
-            td2.innerHTML += arrayTask[i].taskDesc;
-    
-            tr.appendChild(td1);
-            tr.appendChild(td2);
-            tr.appendChild(td3);
-            taskTable.appendChild(tr);
+            for(let i = 0; i < arrayTask.length; i++){
+                let tr = document.createElement('tr');
+                let td1 = document.createElement('td');
+                let td2 = document.createElement('td');
+                let td3 = document.createElement('td');
+        
+                //td3 is for checkbox
+        
+                td3.innerHTML += '<form><input type="checkbox"></form>';
+                td3.classList.add(arrayTask[i].checkbox);
+        
+                td1.innerHTML += arrayTask[i].taskName;
+                td2.innerHTML += arrayTask[i].taskDesc;
+        
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                taskTable.appendChild(tr);
 
+            }
         }
+        
     }
 
 
@@ -67,9 +71,10 @@ document.addEventListener("DOMContentLoaded",function(){
 
         let tempName = document.querySelector('#task-name').value;
         let tempDesc = document.querySelector('#task-description').value;
+        console.log(typeof tempName);
         
     
-        if(tempName !== null && tempDesc !== null){
+        if(tempName !== "" && tempDesc !== ""){
             let tr = document.createElement('tr');
             let td1 = document.createElement('td');
             let td2 = document.createElement('td');
@@ -78,8 +83,8 @@ document.addEventListener("DOMContentLoaded",function(){
             //td3 is for checkbox
             td3.innerHTML += '<form><input type="checkbox"></form>';
             
-            
-            td3.classList.add(uniqueId+1);
+            uniqueId++;
+            td3.classList.add(uniqueId);
             
             
     
@@ -117,7 +122,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
             
 
-
+            location.reload();
 
         }else{
             alert('Please enter all details');
@@ -137,18 +142,36 @@ document.addEventListener("DOMContentLoaded",function(){
         const checkboxzz = document.querySelectorAll('input[type="checkbox"]'); 
 
         let arrayList = JSON.parse(localStorage.getItem('taskList'));
-        let checkboxes = [];
+        if(arrayList !== null){
+            let checkboxes = [];
         checkboxes = checkboxzz;
         // console.log(checkboxes);
         Array.from(checkboxes).forEach(function(checkbox){
             if(checkbox.checked){
-                let i = checkbox.getAttribute('class');
+                let i = checkbox.parentElement.parentElement.getAttribute('class');
                 console.log(i);
+                for(let j = 0; j < checkboxes.length; j++){
+                    if(arrayList[j].checkbox == i){
+                        arrayList.splice(j, 1);
+                        break;
+                    }
+                }
             }
         })
-        localStorage.setItem('taskList',JSON.stringify(arrayList));
-        // location.reload();
+        if(arrayList.length <= 0){
+            localStorage.clear();
+        }
+        else{
+            localStorage.setItem('taskList',JSON.stringify(arrayList));
+            
+        } 
+        location.reload();
 
+        }
+        else{
+            alert('Please add some tasks first.')
+        }
+        
 
     });
 
