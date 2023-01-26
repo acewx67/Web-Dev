@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="newScript.js"></script>
+    <title>To-Do_List</title>
+</head>
+<body>
+    <div class="wrapper">
+        
+        <div class="form">
+            <h1>To-Do_List</h1>
+            <br>
+            <form id="form">
+                <div class="taskName">
+
+                    <label for="task-name">Enter Task name: </label>
+                    <input type="text" name="task" id="task-name" placeholder="eg.completing homework">
+        
+                </div>
+                <br>
+                <div class="taskDesc">
+
+                    <label for="task-description">Task Description: </label>
+                    <!-- <input type="text" name="task-description" id="task-description" placeholder="Deadline 31st Jan/2023"> -->
+                    <textarea id="task-description" placeholder="eg.Deadline 31st Jan/2023"></textarea>
+                </div>
+                <br>
+                <div class="submit">
+                    <input type="submit" value="Add Task" id="submitBtn">
+                </div>
+                <br>
+                <div class="searchBar">
+                    <label for="search-bar">Search Tasks: </label>
+                    <input type="text" name="search-bar" id="search-bar">
+                    <!-- Magnifying Icon as search submit button  -->
+                </div>
+                
+            </form>
+            <br>
+
+            <!-- For Displaying the tasks entered by the user -->
+
+            <div class="userTasks">
+                <table id="taskTable">
+                    <tr>
+                        <th>Task</th>
+                        <th>Description</th>
+                        <th>Tick if Completed</th>
+                    </tr>
+                    <!-- just add a single tr and 4 td s for user data -->
+
+                    <!-- <tr>
+                        <td>abc</td>
+                        <td>xys 21:00</td>
+                        <td>
+                            <form>
+                                <input type="checkbox">
+                            </form>
+                        </td>
+
+                    </tr> -->
+
+                    
+                </table>
+            
+            </div>
+            <br>
+            <div class="deleteButton">
+                <form>
+                    <input type="submit" value="Remove Completed Tasks" name="delete" id="deleteBtn">
+                </form>
+            </div>
+            
+
+        </div>
+    </div>
+   
+</body>
+</html>

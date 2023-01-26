@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: auto;
 }
 body{
     background: rgb(118,111,255);
@@ -14,31 +13,41 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: Poppins,sans-serif;
+}
+.contact{
+    background-color: white;
+    border-radius: 9px;
+    padding: 10px;
+}
+.head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 }
 
-#contact{
-    font-family: Poppins,sans-serif;
-    background-color: white;
-    /* width: 30%;
-    height: 40%; */
-    border-radius: 9px;
+.form{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding:20px;
+    justify-content: flex-start;
 }
-#msg{
-    margin-left: 10px;
-    margin-top: 10px;
-    min-width: 20px;
-    min-height: 60px;
+.message{
+    display: flex;
+    gap:14px;
+}
+.submitsec{
+    
+    display: flex;
+    justify-content: flex-start;
 }
 #submit{
-    justify-self: center;
+    height: 35px;
+    width: 70px;
+    border-radius: 9px;
+    border-color: rgba(118,111,255,1)  rgba(136,242,255,1)  rgba(136,242,255,1)  rgba(118,111,255,1);
 }
 #submit:hover{
     background: rgb(118,111,255);
     background: linear-gradient(90deg, rgba(118,111,255,1) 10%, rgba(136,242,255,1) 90%);
     transition: 0.9s ease;
 }
-
