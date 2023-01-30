@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Poppins,sans-serif;
 }
 
 body{
@@ -20,5 +22,73 @@ table,tr,th,td{
     padding: 10px;
     border:1px solid black;
     border-collapse: collapse;
+    text-align: center;
 }
+td{
+    max-width: 200px;
+    max-height: 200px;
+    word-wrap: break-word;
+
+}
+#form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.taskName{
+    display: flex;
+    gap:10px;
+}
+#task-name{
+    width: 200px;
+}
+.taskDesc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+#task-description{
+    width:200px;
+    height:50px;
+}
+#submitBtn{
+    height:35px;
+    width:100px;
+    display: inline-block;
+    /* padding: 1em 2em; */
+    text-align: center;
+    color: black;
+    background: #00ff99; /* default color */
+
+    /* "to left" / "to right" - affects initial color */
+    background: linear-gradient(to left, white 50%, #00ff99 50%) right;
+    background-size: 200%;
+    transition: .5s ease-out;
+}
+#submitBtn:hover{
+    color:white;
+    background-position: left;
+}
+#deleteBtn{
+    height:35px;
+    width:200px;
+    display: inline-block;
+    /* padding: 1em 2em; */
+    text-align: center;
+    color: black;
+    background: #00ff99; /* default color */
+
+    /* "to left" / "to right" - affects initial color */
+    background: linear-gradient(to left,  white 50%, salmon 50%) right;
+    background-size: 200%;
+    transition: .5s ease-out;
+}
+#deleteBtn:hover{
+    color:white;
+    background-position: left;
+}
+
 
