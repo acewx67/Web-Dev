@@ -25,12 +25,15 @@
 .display{
     grid-row-start: 1;
     grid-row-end: 2;
+    width: 100%;
     background-color: antiquewhite;
     border: 2px solid orange;
     font-size: 30px;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    /* justify-content: flex-end;
+    align-items: flex-end; */
+    flex-wrap: wrap;
+    overflow-y: scroll;
 
 }
 .buttons{
