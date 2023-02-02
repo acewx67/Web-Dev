@@ -1,5 +1,5 @@
 
-let s = '90+1000/2*5-50+100/2';
+    let s = '90+1000/2*5-50+100/1000';
     if(s[s.length-1] == '/' || s[s.length-1] == '*' || s[s.length-1] == '+' || s[s.length-1] == '-'){
         s = s.substring(0, s.length-1);
     }
@@ -160,8 +160,14 @@ let s = '90+1000/2*5-50+100/2';
                 break;
             }
             
-            else if(s[j] == '+' || s[j] == '-'){
+            else if(s[j] == '+'){
                 tempA = s.substring(j+1,i);
+                start = j+1; //j+1 coz we want to include op at j
+                console.log(tempA + 'this tempA');
+                break;
+            }
+            else if(s[j] == '-'){
+                tempA = s.substring(j,i);
                 start = j+1; //j+1 coz we want to include op at j
                 console.log(tempA + 'this tempA');
                 break;
@@ -217,7 +223,7 @@ let s = '90+1000/2*5-50+100/2';
         let i = s.indexOf('-');
         //look for operators in order of / , * , + , -
 
-        console.log(i + 'first + pos');
+        console.log(i + 'first - pos');
         //look left
         for(let j = i-1; j >= 0; j--){
             if(j == 0){
@@ -227,12 +233,12 @@ let s = '90+1000/2*5-50+100/2';
                 break;
             }
             
-            else if(s[j] == '+' || s[j] == '-'){
-                tempA = s.substring(j+1,i);
+            else if(s[j] == '-'){
+                tempA = s.substring(j,i);   //include -sign
                 start = j+1; //j+1 coz we want to include op at j
                 console.log(tempA + 'this tempA');
                 break;
-            }
+                }
             
         }
 
@@ -256,10 +262,6 @@ let s = '90+1000/2*5-50+100/2';
         ans = +tempA - +tempB;
         console.log(ans + 'this ans for add');
 
-        // if(ans > 0 && start==0){
-        //     s = s.substring(0,start) + ans + s.substring(end,s.length);
-        //     console.log(s + 'a');
-        // }
         if(start == 0 && end == -1){
             s = ans;
             console.log(s + 'A');
