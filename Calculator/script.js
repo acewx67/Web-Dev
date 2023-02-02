@@ -20,10 +20,17 @@ document.addEventListener("DOMContentLoaded", function(){
     const display = document.querySelector('.display');
 
     buttonsList.addEventListener('click',buttonClicked,false);
-    const Answer = {
+    // const Answer = {
 
+    // }
+
+
+    function evaluate(){
+        let s = display.innerHTML;
+        s = eval(s);
+        display.innerHTML = s;
     }
-
+    var temp = 0;
     function buttonClicked(e){
         let temp = -1;
         e.preventDefault();
@@ -120,6 +127,9 @@ document.addEventListener("DOMContentLoaded", function(){
                 case 'equals': 
                     temp = '=';
                     break;
+                case 'percentage': 
+                    temp = '%';
+                    break;
 
             }
             switch(temp){
@@ -134,10 +144,29 @@ document.addEventListener("DOMContentLoaded", function(){
                     display.innerHTML = str.substring(0,str.length-1);
                     break;
                 case '=':
-                    let s = display.innerHTML;
-                    console.log(+s);
+                    evaluate();
                     break;
-                
+                case '+/-':
+                    temp = display.innerHTML;
+                    display.innerHTML = +temp * -1;
+                    break;
+                case '^-1':
+                    temp = display.innerHTML;
+                    display.innerHTML = Math.pow(+temp,-1);
+                    break;
+                case '^2':
+                    temp = display.innerHTML;
+                    display.innerHTML = Math.pow(+temp,2);
+                    break;
+                case '^1/2':
+                    temp = display.innerHTML;
+                    display.innerHTML = Math.sqrt(+temp);
+                    break;
+                case '%':
+                    temp = display.innerHTML;
+                    display.innerHTML = +temp/100;
+                    break;
+
 
                 default:
                     display.innerHTML += temp;
