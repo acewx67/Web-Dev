@@ -310,11 +310,11 @@ document.addEventListener("DOMContentLoaded", function(){
                 console.log(s + 'D');
             } 
             
-            
+            let temp = 0;
             for(let i = 0;i<s.length; i++){
-                let temp = 0;
+                
                 if(s[i] == '-') temp++;
-                count += temp;
+                count = temp;
             }  
         }
         display.innerHTML = s;
