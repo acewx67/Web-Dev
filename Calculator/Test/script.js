@@ -246,10 +246,15 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     // console.log('after while');
         //  // SUBTRACTION
-         while(s.indexOf('-') != -1 && s.indexOf('-') != 0) {
+         let count = 0;
+         while(s.indexOf('-') != -1) {
+            //if s contains only 1 '-' op and it is at 0th position break out of the loop
+            if(count == 1 && s.indexOf('-') == 0) break;
+            
             let i = s.indexOf('-');
-            //look for operators in order of / , * , + , -
-    
+            if(s.indexOf('-') == 0){
+                i = s.indexOf('-',1);  //let the below function take care
+            }
             console.log(i + 'first - pos');
             //look left
             for(let j = i-1; j >= 0; j--){
@@ -278,7 +283,7 @@ document.addEventListener("DOMContentLoaded", function(){
                     console.log(tempB + "this tempBE-1");
                     break;
                 }
-                else if(s[j] == '+' || s[j] == '-'){
+                else if(s[j] == '-'){
                     tempB = s.substring(i+1,j);
                     end = j;  //not j-1 because last element ignored in substring
                     console.log(tempB + "this tempB");
@@ -303,8 +308,14 @@ document.addEventListener("DOMContentLoaded", function(){
             }else{
                 s = s.substring(0,start)  + ans + s.substring(end,s.length);
                 console.log(s + 'D');
-            }
+            } 
             
+            
+            for(let i = 0;i<s.length; i++){
+                let temp = 0;
+                if(s[i] == '-') temp++;
+                count += temp;
+            }  
         }
         display.innerHTML = s;
 
