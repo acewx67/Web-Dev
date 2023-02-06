@@ -28,9 +28,11 @@ document.addEventListener("DOMContentLoaded", function(){
         let s = display.innerHTML;
         console.log(s);
         console.log(s.length , "this is s length");
+        if(s[0] == '+') s = s.substring(1);
         if(s[s.length-1] == '/' || s[s.length-1] == '*' || s[s.length-1] == '+' || s[s.length-1] == '-'){
             s = s.substring(0, s.length-1);
         }
+
         
     
     
