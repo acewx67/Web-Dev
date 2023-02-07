@@ -1,21 +1,10 @@
-let stocks = {
-    Fruits : ["strawberry", "grapes", "banana", "apple"],
-    liquid : ["water", "ice"],
-    holder : ["cone", "cup", "stick"],
-    toppings : ["chocolate", "peanuts"],
- };
+let p = new Promise( (resolve,reject) =>{
+    setTimeout( ()=>{
+        console.log('resolved after 2 seconds');
+        resolve(12);
+    },2000);
+});
 
- let is_shop_open = false;
-
- let order = (time , work) => {
-    
-    return new Promise( (resolve,reject) => {
-        setTimeout(() => {
-            if(is_shop_open){
-                resolve( work() );
-            }
-            else reject(console.log('our shop is closed'));
-        },time);
-        
-    })
- }
+p.then( (value) => {
+    console.log('promise has completed execution');
+});
