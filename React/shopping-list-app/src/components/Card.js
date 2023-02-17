@@ -1,34 +1,44 @@
 import React from "react";
 
-function Card({ title, qty,uid,setData,data}) {
+function Card({ title, qty,uid,setData,data,status,setOpenModalProp,setOpenEditProp,cardId}) {
+
   function removeFunc(){
-    // console.log(uid);
-    // console.log(data.filter((obj)=>{
-    //   return obj.key === uid;
-    // }));
+
     let temp = [...data];
-    for(let i=0; i<temp.length; i++){
-      if(temp[i].key === uid){
+    temp.map((obj,i)=>{
+      if(obj.key === uid){
         temp.splice(i,1);
       }
-    }
+    });
     setData(temp);
+      
+  }
+
+  function handleCheck(e){
+    let temp = [...data];
+    temp.map((obj)=>{
+      if(obj.key === uid){
+        obj.checked = obj.checked ? false : true; 
+      }
+    })
+    setData(temp);
+  }
+  function handleEdit(){
+    //close modal
+    console.log(uid,'inside card');
+    cardId(uid);
+    setOpenModalProp(false);
+    //open edit modal
+    setOpenEditProp(true);
     
   }
-  // function edit(){
-  //   let temp = [...data];
-  //   temp.map((obj)=>{
-
-  //   })
-  // }
   return (
     <div className="card">
       <div className="title">{title}</div>
       <div className="qty">Quantity : {qty}</div>
       <div className="buttons">
         <div className="editButton">
-          <div onClick={() => {}}>
-            {" "}
+          <div onClick={handleEdit} >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               x="0px"
@@ -54,7 +64,7 @@ function Card({ title, qty,uid,setData,data}) {
                 fill="#4343bf"
                 d="M36.967,82.032L19.998,66.071L68.49,18.42l15.17,16.306L36.967,82.032z M28.646,65.968l8.164,7.682 l38.551-39.057l-7.118-7.687L28.646,65.968z"
               ></path>
-              <polygon
+              <polygon 
                 fill="#3abcf8"
                 points="40.992,77.954 33.983,70.946 70.327,34.602 61.342,25.412 68.49,18.42 84.486,34.774"
               ></polygon>
@@ -62,16 +72,18 @@ function Card({ title, qty,uid,setData,data}) {
             </svg>
           </div>
         </div>
+
         <label className="cl-checkbox">
-          <input type="checkbox" />
+          <input type="checkbox" checked={status} onChange={handleCheck} />
           <span></span>
         </label>
+
         <div className="deleteButton" onClick={removeFunc}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
             y="0px"
-            width="50"
+            width="45"
             height="30"
             viewBox="0 0 50 50"
           >

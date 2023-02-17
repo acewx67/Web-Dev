@@ -1,45 +1,40 @@
-import { useState } from "react";
-
-export default function Modal({ setOpenModalProp, setData, data }) {
-  console.log("props", data);
-  const [item, setItem] = useState({
-    title: "",
-    quantity: "",
-    key:Date.now()+"",
-    checked : false
-  });
-  function submit() {
-    if(item.title === "" || item.quantity === "") {
-      alert("Please enter all details");
-    }
-    else{
-      //adding a random key value to the item
-      setItem(
-        {
-        ...item,
-        key:Date.now()+""
+import {useState} from 'react';
+export default function EditWindow({ setOpenEditProp, setData, data ,cId}){
+    const [item, setItem] = useState({
+        title: "",
+        quantity: "",
+        key:Date.now()+"",
+        checked : false
+      });
+    function submit() {
+        let temp = [...data];
+        console.log(temp);
+        let index = data.findIndex(obj=> obj.key === cId);
+        console.log(temp.splice(index,1,item));
+        
+        if(item.title === "" || item.quantity === "") {
+            alert("Please enter all details");
         }
-      );
-      //pushing the item into the data array
-      setData([...data,item]);
+        else{
+            temp = temp.splice(index,1,item);
+            setData(temp);
+            setOpenEditProp(false);
+        }
+        
     }
-    
-  }
-
-  // console.log(submit());
-  return (
-    <div className="modalBackground">
+    return(
+        <div className="modalBackground">
       <div className="modalContainer">
         <button
           className="btnX"
           onClick={() => {
-            setOpenModalProp(false);
+            setOpenEditProp(false);
           }}
         >
           X
         </button>
         <div className="modalTitle">
-          <h2>Please enter all the details :</h2>
+          <h2>Please enter the new info :</h2>
         </div>
         <div className="modalBody">
           <form className="itemDetails">
@@ -71,12 +66,12 @@ export default function Modal({ setOpenModalProp, setData, data }) {
         </div>
         <div className="modalFooter">
           <button className="submitBtn" onClick={submit}>
-            Submit
+            Save changes
           </button>
           <button
             className="cancelBtn"
             onClick={() => {
-              setOpenModalProp(false);
+              setOpenEditProp(false);
             }}
           >
             Cancel
@@ -84,5 +79,5 @@ export default function Modal({ setOpenModalProp, setData, data }) {
         </div>
       </div>
     </div>
-  );
+    );
 }
