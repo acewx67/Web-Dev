@@ -1,36 +1,42 @@
 import React from "react";
 
-function Card({ title, qty,uid,setData,data,status,setOpenModalProp,setOpenEditProp,cardId}) {
-
-  function removeFunc(){
-
+function Card({
+  title,
+  qty,
+  uid,
+  setData,
+  data,
+  status,
+  setOpenModalProp,
+  setOpenEditProp,
+  cardId,
+}) {
+  function removeFunc() {
     let temp = [...data];
-    temp.map((obj,i)=>{
-      if(obj.key === uid){
-        temp.splice(i,1);
+    temp.map((obj, i) => {
+      if (obj.key === uid) {
+        temp.splice(i, 1);
       }
     });
     setData(temp);
-      
   }
 
-  function handleCheck(e){
+  function handleCheck(e) {
     let temp = [...data];
-    temp.map((obj)=>{
-      if(obj.key === uid){
-        obj.checked = obj.checked ? false : true; 
+    temp.map((obj) => {
+      if (obj.key === uid) {
+        obj.checked = obj.checked ? false : true;
       }
-    })
+    });
     setData(temp);
   }
-  function handleEdit(){
+  function handleEdit() {
     //close modal
-    console.log(uid,'inside card');
+    console.log(uid, "inside card");
     cardId(uid);
     setOpenModalProp(false);
     //open edit modal
     setOpenEditProp(true);
-    
   }
   return (
     <div className="card">
@@ -38,7 +44,7 @@ function Card({ title, qty,uid,setData,data,status,setOpenModalProp,setOpenEditP
       <div className="qty">Quantity : {qty}</div>
       <div className="buttons">
         <div className="editButton">
-          <div onClick={handleEdit} >
+          <div onClick={handleEdit}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               x="0px"
@@ -64,7 +70,7 @@ function Card({ title, qty,uid,setData,data,status,setOpenModalProp,setOpenEditP
                 fill="#4343bf"
                 d="M36.967,82.032L19.998,66.071L68.49,18.42l15.17,16.306L36.967,82.032z M28.646,65.968l8.164,7.682 l38.551-39.057l-7.118-7.687L28.646,65.968z"
               ></path>
-              <polygon 
+              <polygon
                 fill="#3abcf8"
                 points="40.992,77.954 33.983,70.946 70.327,34.602 61.342,25.412 68.49,18.42 84.486,34.774"
               ></polygon>

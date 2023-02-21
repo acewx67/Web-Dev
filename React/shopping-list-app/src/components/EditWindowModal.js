@@ -1,29 +1,27 @@
-import {useState} from 'react';
-export default function EditWindow({ setOpenEditProp, setData, data ,cId}){
-    const [item, setItem] = useState({
-        title: "",
-        quantity: "",
-        key:Date.now()+"",
-        checked : false
-      });
-    function submit() {
-        let temp = [...data];
-        console.log(temp);
-        let index = data.findIndex(obj=> obj.key === cId);
-        console.log(temp.splice(index,1,item));
-        
-        if(item.title === "" || item.quantity === "") {
-            alert("Please enter all details");
-        }
-        else{
-            temp = temp.splice(index,1,item);
-            setData(temp);
-            setOpenEditProp(false);
-        }
-        
+import { useState } from "react";
+export default function EditWindow({ setOpenEditProp, setData, data, cId }) {
+  const [item, setItem] = useState({
+    title: "",
+    quantity: "",
+    key: Date.now() + "",
+    checked: false,
+  });
+  function submit() {
+    let temp = [...data];
+    console.log(temp);
+    let index = data.findIndex((obj) => obj.key === cId);
+    console.log(temp.splice(index, 1, item));
+
+    if (item.title === "" || item.quantity === "") {
+      alert("Please enter all details");
+    } else {
+      temp = temp.splice(index, 1, item);
+      setData(temp);
+      setOpenEditProp(false);
     }
-    return(
-        <div className="modalBackground">
+  }
+  return (
+    <div className="modalBackground">
       <div className="modalContainer">
         <button
           className="btnX"
@@ -79,5 +77,5 @@ export default function EditWindow({ setOpenEditProp, setData, data ,cId}){
         </div>
       </div>
     </div>
-    );
+  );
 }
