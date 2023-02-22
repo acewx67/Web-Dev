@@ -9,15 +9,21 @@ class BB extends Component {
   }
 
   handleClick() {
-    this.setState({
-      content: this.props.playerX ? "X" : "O",
-    });
-    this.props.setPlayer();
-    this.props.setData(+this.props.idx, this.props.playerX ? "X" : "O");
+    if (this.props.data[this.props.idx].value === "" && this.props.verdict === "") {
+      this.setState({
+        content: this.props.playerX ? "X" : "O",
+      });
+      this.props.setPlayer();
+
+      this.props.setData(+this.props.idx, this.props.playerX ? "X" : "O");
+      console.log(this.props.data);
+    }
+    
   }
 
+
   render() {
-    // console.log("sdf", this.state.content);
+    // console.log(this.props.data);
     return (
       <div className="bb" onClick={this.handleClick}>
         {this.state.content}
