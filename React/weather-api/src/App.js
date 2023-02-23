@@ -20,7 +20,7 @@ function App() {
     <div className="App">
       <SearchBar data={data} setData={setData} setWeatherData={setWeatherData}
       searchHistory={searchHistory} setSearchHistory={setSearchHistory} />
-      <DisplayData weatherData={weatherData} searchHistory={searchHistory} setSearchHistory={setSearchHistory}/>
+      <DisplayData data={data} setData={setData} setWeatherData={setWeatherData} weatherData={weatherData} searchHistory={searchHistory} setSearchHistory={setSearchHistory}/>
     </div>
   );
 }
