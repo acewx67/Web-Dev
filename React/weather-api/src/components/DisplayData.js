@@ -10,7 +10,6 @@ function DisplayData(props) {
     <div className="displayWrapper">
       <div className="mainBox">
         {data !== null && display(data)}
-        {data !== null && <SearchHistoryCol reqdProps={props} data={data} searchHistory={props.searchHistory} setSearchHistory={props.setSearchHistory}/>}
       </div>
     </div>
   );

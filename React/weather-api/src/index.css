@@ -5,6 +5,10 @@
   box-sizing: border-box;
   font-family: Poppins,sans-serif;
 }
+.App{
+  display: flex;
+  flex-direction: column;
+}
 .searchBtn{
   background: none;
   border : none;
@@ -14,13 +18,16 @@
   gap:3px;
   justify-content: center;
   justify-content: baseline;
+  margin : 20px;
 }
 .mainBox{
   display: flex;
   justify-content: center;
   gap: 50px;
 }
-.searchHistory{
-  align-self:baseline;
+.col{
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  gap : 50px;
 }
-
