@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 function SearchBar(props) {
   const [searchQuery, setSearchQuery] = useState("");
+  
+  
   function handleChange(e) {
     setSearchQuery(e.target.value);
   }
@@ -21,7 +23,20 @@ function SearchBar(props) {
         lon: response.data[0].lon,
       };
       props.setData(temp);
+      store(response.data[0].name);
       getWeatherData(temp.lat,temp.lon);
+    }
+    function store(cityName){
+      if(!props.searchHistory){
+        let t = [];
+        t.push(cityName);
+        props.setSearchHistory(t);
+      }
+      else{
+        let t = props.searchHistory;
+        t.unshift(cityName);
+        props.setSearchHistory(t);
+      }
     }
     let url = `http://api.openweathermap.org/geo/1.0/direct?q=${searchQuery}&appid=ae77d8547f03cb282b301821239c39c1`;
 
