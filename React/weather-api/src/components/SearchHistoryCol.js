@@ -15,9 +15,9 @@ function SearchHistoryCol(props) {
     <div className='searchHistory'>
       <h3>Previous Search:</h3>
       <div className="history">
-        {props.searchHistory.map((cityName)=>{
+        {props.searchHistory.map((cityName,i)=>{
           return(
-            <div onClick={handleClick} id={cityName} > {cityName}</div>
+            <div key={i} onClick={handleClick} id={cityName} className="cityList"> {cityName}</div>
           );
         })}
       </div>

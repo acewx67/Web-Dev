@@ -17,6 +17,10 @@ function SearchBar(props) {
 
   return (
     <div className="searchBar">
+      <div className="mainTitle">
+        THE Weather App
+      </div>
+      
       <form onSubmit={submitHandler}>
         <label>Enter City Name: </label>
         <input
