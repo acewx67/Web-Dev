@@ -1,34 +1,37 @@
 import "./App.css";
 import SearchBar from "./components/SearchBar";
 import DisplayData from "./components/DisplayData";
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import SearchHistoryCol from "./components/SearchHistoryCol";
 import fetchData1 from "./redux/fetchData/fetchDataAction";
-import fetchWeatherData1 from "./redux/fetchWeatherData/weatherDataAction"
+import fetchWeatherData1 from "./redux/fetchWeatherData/weatherDataAction";
 import prevHistory from "./redux/prevHistory/prevHistoryAction";
-
-
-
+import { Routes, Route } from "react-router-dom";
+import { NoMatch } from "./components/NoMatch";
+import {useParams} from 'react-router-dom'
 
 function App() {
-  const data = useSelector(state=>state.userData)
-  const dispatch = useDispatch()
-  const weatherData = useSelector(state=>state.weatherData)
-  const searchHistory = useSelector(state=>state.prevHistory.searchHistory)
+  const data = useSelector((state) => state.userData);
+  const dispatch = useDispatch();
+  const weatherData = useSelector((state) => state.weatherData);
+  const searchHistory = useSelector((state) => state.prevHistory.searchHistory);
+
   
   
+
+
   function fetchData(searchQuery) {
     let url = `http://api.openweathermap.org/geo/1.0/direct?q=${searchQuery}&appid=ae77d8547f03cb282b301821239c39c1`;
 
     axios
       .get(url)
       .then((response) => {
-        console.log("befre new smthings");
+        // console.log("befre new smthings");
         editData(response);
       })
       .catch((error) => {
-        console.log("new somethings");
+        // console.log("new somethings");
         alert("Please enter a valid city");
         console.log("error in retreiving lat,lon data", error);
       });
@@ -41,7 +44,7 @@ function App() {
       lon: response.data[0].lon,
     };
     console.log(temp);
-    dispatch(fetchData1(temp))
+    dispatch(fetchData1(temp));
     console.log(data);
     getWeatherData(temp.lat, temp.lon);
     store(temp.cityName);
@@ -51,8 +54,8 @@ function App() {
     axios
       .get(url)
       .then((response) => {
-        console.log(response.data,"response");
-        dispatch(fetchWeatherData1(response.data))
+        console.log(response.data, "response");
+        dispatch(fetchWeatherData1(response.data));
       })
       .catch((error) => console.log("error in retreiving weather data", error));
   }
@@ -78,26 +81,57 @@ function App() {
         dispatch(prevHistory(t));
       }
     }
-    console.log(searchHistory,"in store func");
+    console.log(searchHistory, "in store func");
   }
-
+  
 
   return (
-      <div className="App">
-        <SearchBar  fetchData={fetchData}/>
-        <div className="col">
-          {console.log(weatherData,'in jsx')}
-            <DisplayData
-            data={weatherData}/>
-          {console.log(searchHistory)}
-          {weatherData&&searchHistory ? (
-            <SearchHistoryCol
-              searchHistory={searchHistory}
-              fetchData={fetchData}
-            />
-          ) : null}
-        </div>
-      </div>
+    <>
+      <Routes>
+        <Route
+          path='/'
+          element={
+            <div className="App">
+              <SearchBar fetchData={fetchData} />
+              <div className="col">
+                {console.log(weatherData, "in jsx")}
+                <DisplayData data={weatherData} />
+                {console.log(searchHistory)}
+                {weatherData && searchHistory ? (
+                  <SearchHistoryCol
+                    searchHistory={searchHistory}
+                    fetchData={fetchData}
+                  />
+                ) : null}
+              </div>
+            </div>
+          }
+        />
+        <Route
+          path="/:cityName"
+          element={
+              
+            <div className="App">
+              <SearchBar fetchData={fetchData} />
+              <div className="col">
+                {/* {console.log(weatherData, "in jsx")} */}
+                <DisplayData data={weatherData} />
+                {console.log(searchHistory)}
+                {weatherData && searchHistory ? (
+                  <SearchHistoryCol
+                    searchHistory={searchHistory}
+                    fetchData={fetchData}
+                  />
+                ) : null}
+              </div>
+            </div>
+          }
+        />
+
+        <Route path="*" element={<NoMatch />}/>
+        
+      </Routes>
+    </>
   );
 }
 

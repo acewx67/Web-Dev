@@ -1,10 +1,16 @@
 import React from 'react'
+import { useParams ,useNavigate, Navigate} from "react-router-dom";
+
 
 function SearchHistoryCol(props) {
+  const navigate=useNavigate()
+
   // console.log(props.searchHistory,"inside search history col");
   function handleClick(e){
     console.log(e.target.id);
-    props.fetchData(e.target.id);
+    // props.fetchData(e.target.id);
+    navigate(`/${e.target.id}`)
+
   }
   
   return (

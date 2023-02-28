@@ -1,28 +1,33 @@
 import React from "react";
-import { useState } from "react";
+import { useState ,useEffect} from "react";
+import { useParams ,useNavigate, Navigate} from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-// import { useSelector,useDispatch } from "react-redux";
-function SearchBar(props) {
-  const [searchQuery, setSearchQuery] = useState("");
 
+function SearchBar(props) {
+  const params = useParams();
+  const navigate=useNavigate()
+  console.log(params.cityName);
+  const [searchQuery, setSearchQuery] = useState("");
+  const {fetchData} = props;
+  useEffect(()=>{params.cityName && fetchData(params.cityName)},[params.cityName])
   function handleChange(e) {
     setSearchQuery(e.target.value);
   }
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log('triggered submitHandler');
+    navigate(`/${searchQuery}`)
+    // console.log('triggered submitHandler');
     props.fetchData(searchQuery);
+    
   };
 
   return (
     <div className="searchBar">
-      <div className="mainTitle">
-        The Weather App
-      </div>
-      
+      <div className="mainTitle">The Weather App</div>
+
       <form onSubmit={submitHandler}>
         <label>Enter City Name: </label>
         <input
