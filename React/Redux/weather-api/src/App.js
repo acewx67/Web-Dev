@@ -2,12 +2,9 @@ import "./App.css";
 import SearchBar from "./components/SearchBar";
 import DisplayData from "./components/DisplayData";
 import { useSelector,useDispatch } from "react-redux";
-import { useState} from "react";
 import axios from "axios";
 import SearchHistoryCol from "./components/SearchHistoryCol";
-import store from './redux/store'
 import fetchData1 from "./redux/fetchData/fetchDataAction";
-import { Provider } from "react-redux";
 import fetchWeatherData1 from "./redux/fetchWeatherData/weatherDataAction"
 import prevHistory from "./redux/prevHistory/prevHistoryAction";
 
@@ -65,7 +62,7 @@ function App() {
       let t = [];
       t.push(cityName);
       dispatch(prevHistory(t));
-      console.log(searchHistory,"bhiin");
+      // console.log(searchHistory,"bhiin");
     } else {
       if (searchHistory.indexOf(cityName) !== -1) {
         let t = searchHistory;
