@@ -1,27 +1,28 @@
 import React from "react";
-import { useState ,useEffect} from "react";
-import { useParams ,useNavigate, Navigate} from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useParams, useNavigate, Navigate } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 function SearchBar(props) {
   const params = useParams();
-  const navigate=useNavigate()
-  console.log(params.cityName);
+  const navigate = useNavigate();
+  // console.log(params.cityName);
   const [searchQuery, setSearchQuery] = useState("");
-  const {fetchData} = props;
-  useEffect(()=>{params.cityName && fetchData(params.cityName)},[params.cityName])
+  const { fetchData } = props;
+  useEffect(() => {
+    params.cityName && fetchData(params.cityName);
+  }, [params.cityName]);
   function handleChange(e) {
     setSearchQuery(e.target.value);
   }
 
   const submitHandler = (e) => {
     e.preventDefault();
-    navigate(`/${searchQuery}`)
+    navigate(`/${searchQuery}`);
     // console.log('triggered submitHandler');
     props.fetchData(searchQuery);
-    
   };
 
   return (

@@ -7,7 +7,7 @@ function SearchHistoryCol(props) {
 
   // console.log(props.searchHistory,"inside search history col");
   function handleClick(e){
-    console.log(e.target.id);
+    // console.log(e.target.id);
     // props.fetchData(e.target.id);
     navigate(`/${e.target.id}`)
 
@@ -19,6 +19,7 @@ function SearchHistoryCol(props) {
       <h3>Previous Search:</h3>
       <div className="history">
         {props.searchHistory.map((cityName,i)=>{
+          
           return(
             <div key={i} onClick={handleClick} id={cityName} className="cityList"> {cityName}</div>
           );

@@ -1,7 +1,7 @@
 import { DATA } from "./fetchDataTypes";
 
 const fetchData1 = (data="empty data") => {
-  console.log('in action creator')
+  // console.log('in action creator')
   return {
     type: DATA,
     payload : data,

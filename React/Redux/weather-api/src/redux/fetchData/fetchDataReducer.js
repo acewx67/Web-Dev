@@ -7,7 +7,7 @@ const initialState = {
 }
 
 const userInputReducer = (state=initialState,action) =>{
-    console.log(' in reducer');
+    // console.log(' in reducer');
     switch(action.type){
         case DATA : return {
           ...state,

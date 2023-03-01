@@ -5,7 +5,7 @@ const initialState = {
 }
 
 const prevHistoryReducer = (state=initialState,action) =>{
-    console.log(' in prev history reducer');
+    // console.log(' in prev history reducer');
     switch(action.type){
         case "PREV_HISTORY" : 
         return {

@@ -33,7 +33,7 @@ function App() {
       .catch((error) => {
         // console.log("new somethings");
         alert("Please enter a valid city");
-        console.log("error in retreiving lat,lon data", error);
+        // console.log("error in retreiving lat,lon data", error);
       });
   }
   function editData(response) {
@@ -43,9 +43,9 @@ function App() {
       lat: response.data[0].lat,
       lon: response.data[0].lon,
     };
-    console.log(temp);
+    // console.log(temp);
     dispatch(fetchData1(temp));
-    console.log(data);
+    // console.log(data);
     getWeatherData(temp.lat, temp.lon);
     store(temp.cityName);
   }
@@ -69,11 +69,11 @@ function App() {
     } else {
       if (searchHistory.indexOf(cityName) !== -1) {
         let t = searchHistory;
-        console.log(t);
+        // console.log(t);
         t.splice(searchHistory.indexOf(cityName), 1);
-        console.log(t);
+        // console.log(t);
         t.unshift(cityName);
-        console.log(t);
+        // console.log(t);
         dispatch(prevHistory(t));
       } else {
         let t = searchHistory;
@@ -81,7 +81,7 @@ function App() {
         dispatch(prevHistory(t));
       }
     }
-    console.log(searchHistory, "in store func");
+    // console.log(searchHistory, "in store func");
   }
   
 
@@ -94,9 +94,9 @@ function App() {
             <div className="App">
               <SearchBar fetchData={fetchData} />
               <div className="col">
-                {console.log(weatherData, "in jsx")}
+                {/* {console.log(weatherData, "in jsx")} */}
                 <DisplayData data={weatherData} />
-                {console.log(searchHistory)}
+                {/* {console.log(searchHistory)} */}
                 {weatherData && searchHistory ? (
                   <SearchHistoryCol
                     searchHistory={searchHistory}
@@ -116,7 +116,7 @@ function App() {
               <div className="col">
                 {/* {console.log(weatherData, "in jsx")} */}
                 <DisplayData data={weatherData} />
-                {console.log(searchHistory)}
+                {/* {console.log(searchHistory)} */}
                 {weatherData && searchHistory ? (
                   <SearchHistoryCol
                     searchHistory={searchHistory}
