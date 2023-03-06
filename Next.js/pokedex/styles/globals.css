@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins,sans-serif;
+}
+body{
+  font-size: 1.2em;
+}
+
+.main{
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 60.11px 1fr;
+  grid-template-columns: 300px 1fr;
+
+
+}
+.navbar{
+  grid-row-start: 1;
+  grid-row-end: 2 ;
+  grid-column-start:1;
+  grid-column-end: 3;
+
+  display: flex ;
+  background-color: rgb(77, 77, 248);
+  justify-content: center;
+}
+.namesColumn{
+  /* word-break: break-word; */
+  /* text-align: center; */
+  padding: 10px;
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pokeInfo{
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+.viewMore{
+  background-color: blue;
+  color: white;
+}
+.pokemonName{
+  font-size: 25px;
+}
