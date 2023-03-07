@@ -33,7 +33,7 @@ function Pokedex({data}){
               <div key={i} id={i} className='pokemonName' 
               onClick={(e)=>{
                 setPokemon({name:obj.name,id:i+1})
-                router.push(`/${obj.name}`)
+                // router.push(`/${obj.name}`)
                 
               }} >
                 {obj.name[0].toUpperCase()+obj.name.substring(1)}

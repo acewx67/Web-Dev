@@ -32,7 +32,7 @@ function PokeApi({data}) {
           <>
             {list.map((obj, i) => {
               return (
-                <Link href={`/${obj.name}/${i+1}`} key={i}>
+                <Link href={`/${obj.name}`} key={i}>
                   <Card key={i} pokemonId={i + 1} pokemonName={obj.name[0].toUpperCase()+obj.name.substring(1)} />
                 </Link>
               );

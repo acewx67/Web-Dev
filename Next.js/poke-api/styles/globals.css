@@ -69,5 +69,14 @@ body{
 .pokemonName:hover{
   cursor: pointer;
   text-decoration: underline;
-  color: rgb(214, 84, 84);
 }
+.info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.text{
+  margin: 15px;
+}
+
