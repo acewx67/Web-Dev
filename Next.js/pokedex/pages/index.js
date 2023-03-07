@@ -1,12 +1,19 @@
+
 import {useState} from 'react'
+import PokeInfo from './components/PokeInfo'
+import {useRouter} from 'next/router'
 
 function Pokedex({data}){
   const [list,setList] = useState(data.slice(0,10))
   const [i,setI] = useState(10)
-  function displayPokemon(data,i){
+  const [pokemon,setPokemon] = useState({name:"",id:0})
+  const router = useRouter(
+
+  )
+  function displayPokemonName(data,i){
     console.log(i,'index');
-    console.log("displayPokemon trigg");
-    console.log(list);
+    // console.log("displayPokemonName trigg");
+    // console.log(list);
     setList([...list,...data.slice(i,i+10)])
     setI(i+10)
   }
@@ -17,19 +24,26 @@ function Pokedex({data}){
           <img src="pokeapi_256.png" width={150} alt="logo" />
         </div>
         <div className="namesColumn">
-          {console.log(data)}
+          {/* {console.log(data)} */}
           <h3>Pokemon List</h3>
           
           {list.map((obj,i)=>{
             return(
             
-              <div className='pokemonName'>{obj.name[0].toUpperCase()+obj.name.substring(1)}</div>
+              <div key={i} id={i} className='pokemonName' 
+              onClick={(e)=>{
+                setPokemon({name:obj.name,id:i+1})
+                router.push(`/${obj.name}`)
+                
+              }} >
+                {obj.name[0].toUpperCase()+obj.name.substring(1)}
+              </div>
               
             )
           })}
-          <div className="viewMore" onClick={()=>{displayPokemon(data,i)}}>View More</div>
+          <div className="viewMore" onClick={()=>{displayPokemonName(data,i)}}>View More</div>
         </div>
-        <div className="pokeInfo">pokeInfo</div>
+        <PokeInfo pokemon={pokemon} data={data}/>
       </div>
     </>
   );

@@ -14,6 +14,7 @@ body{
   display: grid;
   grid-template-rows: 60.11px 1fr;
   grid-template-columns: 300px 1fr;
+  position: relative;
 
 
 }
@@ -22,24 +23,29 @@ body{
   grid-row-end: 2 ;
   grid-column-start:1;
   grid-column-end: 3;
-
+  /* z-index: 10; */
   display: flex ;
   background-color: rgb(77, 77, 248);
   justify-content: center;
+  
 }
 .namesColumn{
-  /* word-break: break-word; */
-  /* text-align: center; */
   padding: 10px;
   background-color: antiquewhite;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-y: scroll;
 }
 .pokeInfo{
-  padding: 10px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  background-color: aquamarine;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
 }
 .viewMore{
   background-color: blue;
@@ -48,3 +54,23 @@ body{
 .pokemonName{
   font-size: 25px;
 }
+.pokeCard{ 
+  width :100%;
+  position: fixed;
+  height: 50%;
+  
+}
+.info{
+  display: flex;
+  flex-direction: column;
+  
+}
+.gif{
+  align-self: center;
+}
+.pokemonName:hover{
+  cursor: pointer;
+  text-decoration: underline;
+  color: rgb(214, 84, 84);
+}
+
