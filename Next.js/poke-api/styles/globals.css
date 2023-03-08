@@ -41,6 +41,7 @@ body{
   background-color: blue;
   color: white;
   width: 120px;
+  cursor: pointer;
   
 }
 
@@ -71,6 +72,7 @@ body{
   text-decoration: underline;
 }
 .info{
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -78,5 +80,11 @@ body{
 }
 .text{
   margin: 15px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.errorMsg{
+  text-align: center;
 }
 
