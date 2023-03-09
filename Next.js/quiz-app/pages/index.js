@@ -1,25 +1,30 @@
 import React from 'react'
 import { useState } from 'react'
 import Navbar from './components/Navbar'
+import Modal from './components/Modal'
 function Index(props) {
-  console.log(props.responsedata);
+  // console.log(props.responsedata);
   const [data,setData] = useState(null)
   !data && setData(props.responsedata)
   const [options,setOptions] = useState({})
-  console.log(options);
+  const [marks,setMarks] = useState(null)
+  const [show,setShow] = useState(false)
+  // console.log(options);
   return (
     <>
     <Navbar/>
-    
-    {data && data.map((obj,i)=>{
-     
+    {
+    show ? <Modal setShow={setShow} marks={marks} setOptions={setOptions} setMarks={setMarks}/> :
+    data && data.map((obj,i)=>{
       return(
+       
       <div className='main' key={obj.id}>
       <div className="question">
       {i+1+'. '}{obj.question}
       </div>
       
       <div className="options">
+        
         {obj.options.map((option,i)=>{
           return (
             <>
@@ -33,18 +38,31 @@ function Index(props) {
       </div>
     )})
     }
-    <div className="button"><div className='submitBtn'>Submit</div></div>
-
+    {!show && <div className="button"><div className='submitBtn' onClick={handleSubmit}>Submit</div></div>}
+    
     </>
   )
   function handleChange(e,val) {
-    console.log(val);
-    // let id = e.target.name;
-    // let t = {
-    //   e['target']['name'] : val,
-    // }
-    // setOptions(...options,{e.target.name : val})
+    // console.log(val);
+    let id = e.target.name;
+    let t = {[id] : val};   //how this works??!
+    // console.log(t);
+    setOptions({...options,...t})
+    // console.log('options',options);
   }
+  function handleSubmit() {
+    let count = 0;
+    data.map((obj,i)=>{
+      if(options[obj.id]){
+        // console.log('in if block');
+        options[obj.id] === obj.correct_answer && count++
+      }
+    })
+    // console.log(`${count}/10`);
+    setMarks(count)
+    setShow(true)
+  }
+
 }
 
 
@@ -69,7 +87,7 @@ export async function getStaticProps(){
     return array;
   }
   try{
-    console.log('workig');
+    // console.log('workig');
   const url = "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
   const response = await fetch(url)
   const data = await response.json()
