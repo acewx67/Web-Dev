@@ -2,6 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import Navbar from './components/Navbar'
 import Modal from './components/Modal'
+import Button from '@mui/material/Button';
+import { Radio } from '@mui/material';
 function Index(props) {
   // console.log(props.responsedata);
   const [data,setData] = useState(null)
@@ -38,7 +40,7 @@ function Index(props) {
       </div>
     )})
     }
-    {!show && <div className="button"><div className='submitBtn' onClick={handleSubmit}>Submit</div></div>}
+    {!show && <div className="button"><Button variant='contained' className='submitBtn' onClick={handleSubmit}>Submit</Button></div>}
     
     </>
   )
