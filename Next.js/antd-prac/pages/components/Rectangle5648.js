@@ -17,7 +17,7 @@ function Rectangle5648() {
           </div>
           <Image
             className={styles.group26859}
-            src="/Group.png"
+            src="/Group (1).png"
             height={337.39}
             width={543}
             alt="group26859"
