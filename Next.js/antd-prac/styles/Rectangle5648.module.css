@@ -34,6 +34,8 @@
     width: 543px;
     height: 337.39px;
     padding: 72.61 0 74 0;
+    object-fit: contain;
+    object-fit: cover;
 }
 
 .right {
@@ -84,8 +86,12 @@
 .password {
     margin-bottom: 20px;
 }
+.checkbox{
+    margin-right: 8px;
+}
 
 .loginButton {
+    color : white;
     width: 500px;
     padding: 12px, 16px, 12px, 16px;
     font-size: 10px;
@@ -94,7 +100,7 @@
     background: rgba(21, 139, 112, 1);
 }
 
-.divider,.ant-divider-inner-text {
+.divider {
     font-size: 12px;
     font-weight: 500;
     line-height: 18px;
@@ -102,10 +108,17 @@
     color:rgba(165, 165, 186, 1);
 }
 .googleLoginButton{
-    height:50px;
-    background: rgba(235, 239, 243, 1);
-    /* margin-bottom: 50px; */
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 3px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 65px;
 }
+
 .googleLogin{
     object-fit: contain;
+}
+.signupMsg{
+    font-weight: 400;
+    font-size: 14px;
+}
+.signup{
+    font-weight: 500;
 }

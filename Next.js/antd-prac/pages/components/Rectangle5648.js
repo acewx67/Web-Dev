@@ -6,7 +6,7 @@ import { Row, Col, Space, Form, Input, Checkbox, Button, Divider } from "antd";
 function Rectangle5648() {
   return (
     <Row>
-      <Col xs={24} md={12} className='xyz'>
+      <Col xs={24} md={12} className="xyz">
         <div className={styles.left}>
           <div className={styles.text}>
             Boost your online presence with Listing Local&apos;s SEO platform
@@ -17,7 +17,7 @@ function Rectangle5648() {
           </div>
           <Image
             className={styles.group26859}
-            src="/Group (1).png"
+            src="/Group 26859.png"
             height={337.39}
             width={543}
             alt="group26859"
@@ -51,24 +51,20 @@ function Rectangle5648() {
               placeholder="Enter password"
             ></Input>
             <Row justify={"space-between"}>
-              <div>
-                <Checkbox />
+              <Row gap={5}>
+                <Checkbox className={styles.checkbox}/>
                 <label>Remember me</label>
-              </div>
+              </Row>
               <Button type="link">Forgot Password?</Button>
             </Row>
             <Row justify="center">
-              <Button
-                className={styles.loginButton}
-                size="large"
-                type="primary"
-              >
+              <Button className={styles.loginButton} size="large">
                 LOGIN
               </Button>
               <Divider className={styles.divider}>
                 OR LOGIN WITH GOOGLE ACCOUNT
               </Divider>
-              <div className="googleLoginButton">
+              <div className={styles.googleLoginButton}>
                 <Image
                   className={styles.googleLogin}
                   src="/Frame 1428570.png"
@@ -77,8 +73,14 @@ function Rectangle5648() {
                   height={40}
                 />
               </div>
-              <div className="signup">
-                Don&apos;t have an account? <Button type="link">SIGN UP</Button>
+
+              <div>
+                <div className={styles.signupMsg}>
+                  Don&apos;t have an account?
+                  <Button type="link" className={styles.signup}>
+                    SIGN UP
+                  </Button>
+                </div>
               </div>
             </Row>
           </Form>

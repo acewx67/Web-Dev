@@ -3,3 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+.ant-divider-inner-text{
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0em;
+    color:rgba(165, 165, 186, 1);
+}
