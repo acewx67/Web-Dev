@@ -1,0 +1,26 @@
+service: aws-node-project
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+plugins:
+  - serverless-offline
+
+functions:
+  function1:
+
+    handler: index.handler
+    events: 
+      - httpApi:
+          path: /index
+          method: get
+
+  function2:
+    handler: index.hello
+    events: 
+      - httpApi:
+          path: /hello
+          method: get
+
